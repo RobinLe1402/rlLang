@@ -41,15 +41,17 @@ namespace rlLang
 		{
 			char     sChunkType[4];
 			uint64_t iChunkSize;
-		};
+		} PACKED;
 
 		struct Chunk_hdr
 		{
 			char     sLang[2];
 			uint64_t iCount;
-		};
+		} PACKED;
 
 
+
+#undef PACKED
 
 #ifdef _MSC_VER
 	#pragma pack(pop)
