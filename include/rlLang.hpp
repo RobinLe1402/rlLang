@@ -1,7 +1,7 @@
 /*
 	A class for reading rlLang files, decoding only the critical chunks.
 
-	This class is written to be used in an application using rlLang files for translations. It's
+	This class is written to be used in applications using rlLang files for translations. It's
 	written for speed, so there are no checks for all the conventions the specification requires,
 	like unique strings in the "str " section - only the most important checks are done.
 */

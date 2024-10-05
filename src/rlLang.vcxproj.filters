@@ -13,15 +13,27 @@
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
+    <Filter Include="Header files\private">
+      <UniqueIdentifier>{b8786fa4-b069-4288-8a8b-0ee8181bb335}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="rlLang.cpp">
+      <Filter>Source files</Filter>
+    </ClCompile>
+    <ClCompile Include="rlLangCreator.cpp">
       <Filter>Source files</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\include\rlLang.hpp">
       <Filter>Header files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\include\rlLangCreator.hpp">
+      <Filter>Header files</Filter>
+    </ClInclude>
+    <ClInclude Include="private\Types.hpp">
+      <Filter>Header files\private</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

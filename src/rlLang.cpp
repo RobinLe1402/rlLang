@@ -1,5 +1,7 @@
 #include <rlLang.hpp>
 
+#include "private/Types.hpp"
+
 #include <cstdint>
 #include <fstream>
 
@@ -10,52 +12,6 @@ namespace rlLang
 
 	namespace
 	{
-
-#ifdef __GNUC__
-	#define PACKED __attribute__((packed))
-#elif defined(_MSC_VER)
-	#define PACKED
-	#pragma pack(push, 1)
-#else
-	#error Turning of automatic padding is not configured for your compiler.
-#endif
-
-		constexpr char szMAGIC_NUMBER[] = "rlLang";
-		constexpr uint8_t iVERSION[2] = { 0x01, 0x00 };
-
-		constexpr size_t iCHUNK_TYPE_IDENT_LENGTH = 4;
-		constexpr char szCHUNK_TYPE_HDR [iCHUNK_TYPE_IDENT_LENGTH] = { 0x68, 0x64, 0x72, 0x20 };
-		constexpr char szCHUNK_TYPE_STR [iCHUNK_TYPE_IDENT_LENGTH] = { 0x73, 0x74, 0x72, 0x20 };
-		constexpr char szCHUNK_TYPE_DATA[iCHUNK_TYPE_IDENT_LENGTH] = { 0x64, 0x61, 0x74, 0x61 };
-
-
-
-		struct FileHeader
-		{
-			char     sMagicNo[6];
-			uint8_t  iVersion[2];
-			uint64_t iFileSize;
-		} PACKED;
-
-		struct ChunkHeader
-		{
-			char     sChunkType[4];
-			uint64_t iChunkSize;
-		};
-
-		struct Chunk_hdr
-		{
-			char     sLang[2];
-			uint64_t iCount;
-		};
-
-
-
-#ifdef _MSC_VER
-	#pragma pack(pop)
-#endif
-
-
 
 		bool ReadLangFile(
 			std::ifstream                     &&file,
@@ -175,6 +131,8 @@ namespace rlLang
 		}
 
 	}
+
+
 
 #ifndef _WIN32
 	rlLangFile::rlLangFile(const char8_t *szFilePath)
