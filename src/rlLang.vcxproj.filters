@@ -18,22 +18,25 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="rlLang.cpp">
-      <Filter>Source files</Filter>
-    </ClCompile>
-    <ClCompile Include="rlLangCreator.cpp">
-      <Filter>Source files</Filter>
-    </ClCompile>
-  </ItemGroup>
-  <ItemGroup>
-    <ClInclude Include="..\include\rlLang.hpp">
-      <Filter>Header files</Filter>
-    </ClInclude>
-    <ClInclude Include="..\include\rlLangCreator.hpp">
-      <Filter>Header files</Filter>
-    </ClInclude>
     <ClInclude Include="private\Types.hpp">
       <Filter>Header files\private</Filter>
     </ClInclude>
+    <ClInclude Include="..\include\rlLang\PlatformSpecific.hpp">
+      <Filter>Header files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\include\rlLang\FileEditor.hpp">
+      <Filter>Header files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\include\rlLang\FileReader.hpp">
+      <Filter>Header files</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="FileEditor.cpp">
+      <Filter>Source files</Filter>
+    </ClCompile>
+    <ClCompile Include="FileReader.cpp">
+      <Filter>Source files</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>

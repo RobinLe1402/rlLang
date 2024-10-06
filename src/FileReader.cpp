@@ -1,4 +1,4 @@
-#include <rlLang.hpp>
+#include <rlLang/FileReader.hpp>
 
 #include "private/Types.hpp"
 
@@ -134,19 +134,7 @@ namespace rlLang
 
 
 
-#ifndef _WIN32
-	rlLangFile::rlLangFile(const char8_t *szFilePath)
-	{
-		m_bValid = ReadLangFile(
-			std::ifstream((const char *)szFilePath, std::ios::binary),
-			m_szLang,
-			m_upData,
-			m_upStrings,
-			m_iStringCount
-		);
-	}
-#else
-	rlLangFile::rlLangFile(const wchar_t *szFilePath)
+	FileReader::FileReader(const FilepathChar *szFilePath)
 	{
 		m_bValid = ReadLangFile(
 			std::ifstream(szFilePath, std::ios::binary),
@@ -156,6 +144,5 @@ namespace rlLang
 			m_iStringCount
 		);
 	}
-#endif
 
 }

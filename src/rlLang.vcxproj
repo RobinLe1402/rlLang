@@ -131,13 +131,14 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="rlLang.cpp" />
-    <ClCompile Include="rlLangCreator.cpp" />
+    <ClInclude Include="..\include\rlLang\FileEditor.hpp" />
+    <ClInclude Include="..\include\rlLang\FileReader.hpp" />
+    <ClInclude Include="..\include\rlLang\PlatformSpecific.hpp" />
+    <ClInclude Include="private\Types.hpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="..\include\rlLang.hpp" />
-    <ClInclude Include="..\include\rlLangCreator.hpp" />
-    <ClInclude Include="private\Types.hpp" />
+    <ClCompile Include="FileEditor.cpp" />
+    <ClCompile Include="FileReader.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
