@@ -22,9 +22,20 @@ constexpr char    szMAGIC_NUMBER[] = "rlLang";
 constexpr uint8_t iVERSION[2]      = { 0x01, 0x00 };
 
 constexpr size_t iCHUNK_TYPE_IDENT_LENGTH = 4;
-constexpr char szCHUNK_TYPE_HDR [iCHUNK_TYPE_IDENT_LENGTH] = { 0x68, 0x64, 0x72, 0x20 };
-constexpr char szCHUNK_TYPE_STR [iCHUNK_TYPE_IDENT_LENGTH] = { 0x73, 0x74, 0x72, 0x20 };
-constexpr char szCHUNK_TYPE_DATA[iCHUNK_TYPE_IDENT_LENGTH] = { 0x64, 0x61, 0x74, 0x61 };
+constexpr char sCHUNK_TYPE_HDR [iCHUNK_TYPE_IDENT_LENGTH] = { 0x68, 0x64, 0x72, 0x20 };
+constexpr char sCHUNK_TYPE_STR [iCHUNK_TYPE_IDENT_LENGTH] = { 0x73, 0x74, 0x72, 0x20 };
+constexpr char sCHUNK_TYPE_DATA[iCHUNK_TYPE_IDENT_LENGTH] = { 0x64, 0x61, 0x74, 0x61 };
+
+// todo: define optional chunk type ident strings
+
+constexpr uint32_t ChunkTypeIdentStringToInt(const char (&sChunkTypeIdent)[4])
+{
+	return
+		(uint32_t(sChunkTypeIdent[0]) << 24) |
+		(uint32_t(sChunkTypeIdent[1]) << 16) |
+		(uint32_t(sChunkTypeIdent[2]) <<  8) |
+		(uint32_t(sChunkTypeIdent[3]) <<  0);
+}
 
 
 

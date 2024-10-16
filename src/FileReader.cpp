@@ -55,7 +55,7 @@ namespace rlLang
 
 				// read the chunk header
 				file.read((char *)&ch, sizeof(ch));
-				if (memcmp(szCHUNK_TYPE_HDR, ch.sChunkType, iCHUNK_TYPE_IDENT_LENGTH) != 0)
+				if (memcmp(sCHUNK_TYPE_HDR, ch.sChunkType, iCHUNK_TYPE_IDENT_LENGTH) != 0)
 					throw 0; // not a "hdr " chunk
 				if (ch.iChunkSize != sizeof(Chunk_hdr))
 					throw 0; // wrong size
@@ -79,7 +79,7 @@ namespace rlLang
 
 				// read the chunk header
 				file.read((char *)&ch, sizeof(ch));
-				if (memcmp(szCHUNK_TYPE_STR, ch.sChunkType, iCHUNK_TYPE_IDENT_LENGTH) != 0)
+				if (memcmp(sCHUNK_TYPE_STR, ch.sChunkType, iCHUNK_TYPE_IDENT_LENGTH) != 0)
 					throw 0; // not a "str " chunk
 
 				// read the data
@@ -96,7 +96,7 @@ namespace rlLang
 
 				// read the chunk header
 				file.read((char *)&ch, sizeof(ch));
-				if (memcmp(szCHUNK_TYPE_DATA, ch.sChunkType, iCHUNK_TYPE_IDENT_LENGTH) != 0)
+				if (memcmp(sCHUNK_TYPE_DATA, ch.sChunkType, iCHUNK_TYPE_IDENT_LENGTH) != 0)
 					throw 0; // not a "data" chunk
 
 				// read the data
